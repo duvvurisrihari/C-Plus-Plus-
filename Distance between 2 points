@@ -1,0 +1,125 @@
+/*
+ * myheader.h
+ *
+ *  Created on: Sep 20, 2019
+ *      Author: Sri Hari
+ */
+
+#ifndef MYHEADER_H_
+#define MYHEADER_H_
+
+
+class XYPoint {
+
+public:
+
+int x;
+
+int y;
+
+
+
+
+XYPoint(int xc=0, int yc=0) : x(xc), y(yc) {}
+
+};
+
+float distance(XYPoint p1, XYPoint p2);
+float distance(XYPoint p1, XYPoint p2, XYPoint p3);
+float distance(XYPoint p1, XYPoint p2, XYPoint p3, XYPoint p4);
+float distance(XYPoint p1, XYPoint p2, XYPoint p3, XYPoint p4, XYPoint p5);
+
+
+#endif /* MYHEADER_H_ */
+
+#include "myheader.h"
+#include <cmath>
+#include <iostream>
+
+using namespace std;
+
+float distance(XYPoint p1, XYPoint p2)
+{
+float x1,y1,x2,y2,result;
+x1=p1.x;
+y1=p1.y;
+x2=p2.x;
+y2=p2.y;
+result=sqrt(pow(x2 - x1, 2) +  pow(y2 - y1, 2));
+return result;
+}
+float distance(XYPoint p1, XYPoint p2, XYPoint p3)
+{
+float x1,y1,x2,y2,x3,y3,result;
+x1=p1.x;
+y1=p1.y;
+x2=p2.x;
+y2=p2.y;
+x3=p3.x;
+y3=p3.y;
+result=sqrt(pow(x2 - x1, 2) +  pow(y2 - y1, 2)) + sqrt(pow(x2 - x3, 2) +  pow(y2 - y3, 2));
+return result;
+}
+float distance(XYPoint p1, XYPoint p2, XYPoint p3, XYPoint p4)
+{
+float x1,y1,x2,y2,x3,y3,x4,y4,result;
+x1=p1.x;
+y1=p1.y;
+x2=p2.x;
+y2=p2.y;
+x3=p3.x;
+y3=p3.y;
+x4=p4.x;
+y4=p4.y;
+result=sqrt(pow(x2 - x1, 2) +  pow(y2 - y1, 2)) + sqrt(pow(x2 - x3, 2) +  pow(y2 - y3, 2)) + sqrt(pow(x4 - x3, 2) +  pow(y4 - y3, 2));
+return result;
+}
+float distance(XYPoint p1, XYPoint p2, XYPoint p3, XYPoint p4, XYPoint p5)
+{
+float x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,result;
+x1=p1.x;
+y1=p1.y;
+x2=p2.x;
+y2=p2.y;
+x3=p3.x;
+y3=p3.y;
+x4=p4.x;
+y4=p4.y;
+x5=p5.y;
+y5=p5.y;
+result=sqrt(pow(x2 - x1, 2) +  pow(y2 - y1, 2)) + sqrt(pow(x2 - x3, 2) +  pow(y2 - y3, 2)) + sqrt(pow(x4 - x3, 2) +  pow(y4 - y3, 2)) + sqrt(pow(x4 - x5, 2) +  pow(y4 - y5, 2));
+return result;
+}
+
+#include "myheader.h"
+#include <cmath>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+XYPoint p1,p2,p3,p4,p5;
+float result1,result2,result3,result4;
+p1.x=0;
+p1.y=0;
+p2.x=10;
+p2.y=23;
+p3.x=24;
+p3.y=20;
+p4.x=38;
+p4.y=30;
+p5.x=45;
+p5.y=47;
+result1=distance(p1,p2);
+result2=distance(p1,p2,p3);
+result3=distance(p1,p2,p3,p4);
+result4=distance(p1,p2,p3,p4,p5);
+
+cout<<"distance btw 2 points is  "<<result1<<endl;
+cout<<"distance btw 3 points is  "<<result2<<endl;
+cout<<"distance btw 4 points is  "<<result3<<endl;
+cout<<"distance btw 5 points is  "<<result4<<endl;
+
+return 0;
+}

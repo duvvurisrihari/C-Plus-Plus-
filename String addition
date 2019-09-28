@@ -1,0 +1,71 @@
+/*
+ * myheader.h
+ *
+ *  Created on: Sep 21, 2019
+ *      Author: Sri Hari
+ */
+
+#ifndef MYHEADER_H_
+#define MYHEADER_H_
+#include<iostream>
+#include<string>
+using namespace std;
+
+
+
+string mergeStrings(const string &s1,const string &s2);
+
+
+#endif /* MYHEADER_H_ */
+
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include<iostream>
+#include<string>
+#include "myheader.h"
+
+using namespace std;
+
+string mergeStrings(const string &s1,const string &s2)
+{
+  {
+    string result = "";
+
+
+    for (unsigned int i = 0; i < s1.length() || i < s2.length(); i++)
+    {
+
+
+        if (i < s1.length())
+            result = result + s1[i];
+
+        if (i < s2.length())
+            result = result + s2[i];
+    }
+    return result;
+  }
+}
+
+
+#include<iostream>
+#include<string>
+#include "myheader.h"
+using namespace std;
+
+int main()
+{
+    string s1;
+    string s2;
+    cout << "Enter a string: ";
+    getline(cin, s1);
+        cout << "Enter second string: ";
+    getline(cin, s2);
+    cout<<mergeStrings(s1, s2);
+
+}

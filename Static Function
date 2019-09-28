@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int * function_to_check_static_value()
+{
+   static int mystatic=-1;
+    printf("mystatic=%d\n", mystatic);
+   return &mystatic;
+}
+
+int main()
+{
+  int *result;
+  result= function_to_check_static_value();
+  printf("this is value of static int that was declared in function is\n");
+  *result=56;
+  function_to_check_static_value();
+  printf("this is value of static int, even after modification shows same value \n");
+  return 0;
+}
